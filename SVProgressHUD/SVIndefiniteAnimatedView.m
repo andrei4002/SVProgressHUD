@@ -147,11 +147,7 @@
     if (@available(iOS 13.0, *)) {
         if([self.traitCollection hasDifferentColorAppearanceComparedToTraitCollection:previousTraitCollection]
            && _adjustsStrokeForTraitCollection) {
-            _indefiniteAnimatedGradientLayer.colors = [NSArray arrayWithObjects:
-                                                       (id)[self.strokeColor colorWithAlphaComponent:0.0f].CGColor,
-                                                       (id)[self.strokeColor colorWithAlphaComponent:0.5f].CGColor,
-                                                       (id)self.strokeColor.CGColor,
-                                                       nil];
+            _indefiniteAnimatedLayer.strokeColor = self.strokeColor.CGColor;
         }
     }
 }
